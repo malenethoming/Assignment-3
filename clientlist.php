@@ -24,9 +24,9 @@ while($stmt->fetch()){
 <form method="post" action="addclient.php">
 	New Name: <input type="text" name="client_name" placeholder="New Name"/>
     New address: <input type="text" name="client_address" placeholder="New adress"/>
-    New nub: <input type="text" name="client_numb" placeholder="New number"/>
+    New nub: <input type="text" name="client_contact_number" placeholder="New number"/>
     New conname: <input type="text" name="client_contact_name" placeholder="New conname"/>
-    New zip: <input type="text" name="city" placeholder="New zip"/>
+    New zip: <input type="text" name="zip_code" placeholder="New zip"/>
     <input type="submit" name="action" value="Add to client" />
 </form>
 
