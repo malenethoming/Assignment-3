@@ -22,11 +22,11 @@ while($stmt->fetch()){
 </ul>
 
 <form method="post" action="addclient.php">
-	New Name: <input type="text" name="clname" placeholder="New Name"/>
-    New address: <input type="text" name="claddress" placeholder="New adress"/>
-    New nub: <input type="text" name="clnumb" placeholder="New number"/>
-    New conname: <input type="text" name="clconname" placeholder="New conname"/>
-    New zip: <input type="text" name="clzip" placeholder="New zip"/>
+	New Name: <input type="text" name="client_name" placeholder="New Name"/>
+    New address: <input type="text" name="client_address" placeholder="New adress"/>
+    New nub: <input type="text" name="client_numb" placeholder="New number"/>
+    New conname: <input type="text" name="client_contact_name" placeholder="New conname"/>
+    New zip: <input type="text" name="city" placeholder="New zip"/>
     <input type="submit" name="action" value="Add to client" />
 </form>
 
@@ -34,7 +34,7 @@ while($stmt->fetch()){
  <form action="deleteclient.php" method="post">
  <select name="cid">
 		<?php
-		$sql = 'Select c_name, `clientsID` from clients;';
+		$sql = 'Select client_name, `clientsID` from clients;';
    		$stmt = $link->prepare($sql);
     	$stmt->execute();
     	$stmt->bind_result($clname, $cid);

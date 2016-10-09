@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="dbcon.php" server="C:/xampp/htdocs/myblog/" local="131204811218883045" remote="131204811210000000" Dst="2" />
-<file name="addclient.php" server="C:/xampp/htdocs/myblog/" local="131204836810000000" remote="131204836810000000" Dst="2" />
+<file name="addclient.php" server="C:/xampp/htdocs/myblog/" local="131205081219146869" remote="131205081210000000" Dst="2" />
 <file name="deleteclient.php" server="C:/xampp/htdocs/myblog/" local="131204811686453688" remote="131204811680000000" Dst="2" />
-<file name="clientlist.php" server="C:/xampp/htdocs/myblog/" local="131204837523337908" remote="131204837520000000" Dst="2" />
+<file name="clientlist.php" server="C:/xampp/htdocs/myblog/" local="131205082546500751" remote="131205082540000000" Dst="2" />
+<file name="clinfo.php" server="C:/xampp/htdocs/myblog/" local="131204841103597595" remote="131204841100000000" Dst="2" />
+<file name="editpr.php" server="C:/xampp/htdocs/myblog/" local="131204812414226776" remote="131204812410000000" Dst="2" />
+<file name="editform.php" server="C:/xampp/htdocs/myblog/" local="131204811995621882" remote="131204811990000000" Dst="2" />
 </dwsync>

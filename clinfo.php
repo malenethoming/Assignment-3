@@ -16,7 +16,7 @@ $cid = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) or die('missing parame
 <ul>
 <?php
 require_once 'dbcon.php';
-$sql = 'SELECT c_name, c_address, zip_code_zip_id, c_con_number FROM project1db.clients where clientsID=?';
+$sql = 'SELECT client_name, client_address, zip_code, client_contact_number FROM project1db.clients where clientsID=?';
 
 $stmt = $link->prepare($sql);
 $stmt->bind_param('i', $cid);
