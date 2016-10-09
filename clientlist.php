@@ -18,8 +18,12 @@ $stmt->bind_result($cid, $cname);
 while($stmt->fetch()){
 	echo '<li><a href="clinfo.php?id='.$cid.'">'.$cname.'</a></li>'.PHP_EOL;
 }
+
 ?>
 </ul>
+
+
+
 
 <form method="post" action="addclient.php">
 	New Name: <input type="text" name="client_name" placeholder="New Name"/>
@@ -39,7 +43,7 @@ while($stmt->fetch()){
     	$stmt->execute();
     	$stmt->bind_result($clname, $cid);
     while ($stmt->fetch()){
-   echo '<option value="'.$cid.'" placeholder="Zip">'.$clname.'</option>'.PHP_EOL;
+   echo '<option value="'.$cid.'" placeholder="Zip_code">'.$clname.'</option>'.PHP_EOL;
 	}
  ?>
  <input type="submit" value="Delete">
