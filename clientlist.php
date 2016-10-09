@@ -11,7 +11,7 @@
 <ul>
 <?php
 require_once 'dbcon.php';
-$sql = 'SELECT clientsID, client_name FROM clients';
+$sql = 'SELECT clientsID, client_name FROM malenethoming_c.clients';
 $stmt = $link->prepare($sql);
 $stmt->execute();
 $stmt->bind_result($cid, $cname);

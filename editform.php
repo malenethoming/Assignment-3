@@ -11,7 +11,7 @@
 <?php
 $prid = filter_input(INPUT_GET, 'prid', FILTER_VALIDATE_INT) or die('missing parameter');
 require_once 'dbcon.php';
-$sql = 'SELECT pr_name FROM projects WHERE projectID=?';
+$sql = 'SELECT pr_name FROM malenethoming_c. projects WHERE projectID=?';
 $stmt = $link->prepare($sql);
 $stmt->bind_param('i', $prid);
 $stmt->execute();

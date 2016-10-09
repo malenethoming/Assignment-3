@@ -13,7 +13,7 @@
 
 
 require_once 'dbcon.php';
-$sql = 'SELECT projectID, pr_name FROM projects';
+$sql = 'SELECT projectID, pr_name FROM malenethoming_c.projects';
 $stmt = $link->prepare($sql);
 $stmt->execute();
 $stmt->bind_result($prid, $prname);
