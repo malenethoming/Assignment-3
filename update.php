@@ -1,36 +1,63 @@
+<?php
+if (isset($_POST['submit'])){
+$clname = $_POST ('client_name');
+$description = $_POST ('client_description');
+
+if ($name&&$description) {
+	mysql_connect ("localhost", "root", "") or die ("Could not connect");
+	else echo "You need to enter both the fields"
+
+
+}
+?>
+
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CLient info</title>
+<title>Untitled Document</title>
 </head>
 
 <body>
-<?php
-$cid = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) or die('missing parameter');
-    echo $cid;
-?>
 
-<!-- CLIENT DETAILS -->    
-<h1>Details for client with ID <?=$cid?>:</h1>
+<h1>Clients list:</h1>
 <ul>
 <?php
 require_once 'dbcon.php';
-$sql = 'SELECT client_name, client_address, zip_code, client_contact_number FROM project1db.clients where clientsID=?';
-
+$sql = 'SELECT clientsID, client_name FROM project1db.clients';
 $stmt = $link->prepare($sql);
-$stmt->bind_param('i', $cid);
 $stmt->execute();
-$stmt->bind_result($clname, $claddress, $clzip, $clcontact);
-
+$stmt->bind_result($cid, $cname);
 while($stmt->fetch()){
-	echo '<li>Name: '.$clname.'</li>';
-    echo '<li>Address: '.$claddress.', '.$clzip.'</li>';
-    echo '<li>Contact number: '.$clcontact.'</li>';   
+	echo '<li><a href="clinfo.php?id='.$cid.'">'.$cname.'</a></li>'.PHP_EOL;
 }
 ?>
 </ul>
 
+<form method="post" action="addclient.php">
+	New Name: <input type="text" name="client_name" placeholder="New Name"/>
+    New address: <input type="text" name="client_address" placeholder="New adress"/>
+    New nub: <input type="text" name="client_contact_number" placeholder="New number"/>
+    New conname: <input type="text" name="client_contact_name" placeholder="New conname"/>
+    New zip: <input type="text" name="zip_code" placeholder="New zip"/>
+    <input type="submit" name="action" value="Add to client" />
+</form>
+
+<h2>DELETE CLIENT</h2>
+ <form action="deleteclient.php" method="post">
+ <select name="cid">
+		<?php
+		$sql = 'Select client_name, `clientsID` from clients;';
+   		$stmt = $link->prepare($sql);
+    	$stmt->execute();
+    	$stmt->bind_result($clname, $cid);
+    while ($stmt->fetch()){
+   echo '<option value="'.$cid.'" placeholder="Zip">'.$clname.'</option>'.PHP_EOL;
+	}
+ ?>
+ <input type="submit" value="Delete">
+ </select>
+ </form>
 
 </body>
 </html>
