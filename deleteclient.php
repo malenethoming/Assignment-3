@@ -8,7 +8,7 @@
 <?php
 $cid = filter_input(INPUT_POST, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
 require_once 'dbcon.php';
-$sql = 'Delete from clients where `clientsID`=?';
+$sql = 'Delete from malenethoming_c. clients where `clientsID`=?';
 $stmt = $link->prepare($sql);
 $stmt->bind_param('i', $cid);
 $stmt->execute();
